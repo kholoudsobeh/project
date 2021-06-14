@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Most Stunning Fashion Websites</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="VOGUE-FMD.html">VOGUE-FMD</a>
+    <a href="gucci-elle.html">GUCCI-ELLE</a>
+    <div class="dropdown">
+      <button class="dropbtn">More
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+      <a href="ZARA-DIOR.html">ZARA-DIOR</a>
+      <a class="size" href="Size.html">Companies and Publishers</a>
+      </div>
+    </div> 
+  </div>
+  <br><br>
+
+<form class="f" onsubmit="return checkPassword(this);">
+ <label for="fname">First Name</label><br>
+  <input type="text" id="fname" name="fname" required><br>
+ <label for="lname">Last Name</label><br>
+  <input type="text" id="lname" name="lname" required><br>
+ <label for="email">E-mail</label><br>
+  <input type="email" id="email" name="email" required><br>
+ <label for="pw">Password</label><br>
+  <input type="password" id="pw" name="pw" pattern="(?=.*/d)(?!.*)(?=.*[a-z])(?=.*[A-Z]{1}).{8}" title="It must contain 8 characters starting with uppercase letter and including at least one digit, one of these special character (#,*,_,&,-) and no spaces." required><br>
+ <lable for="phone">Mobile phone number</label><br>
+  <input type="tel" id="phone" name="phone" pattern="[0]{1}[1]{1}[0-9]{9}" required><br>
+ <label for="ads">Address</label><br>
+  <input type="text" id="ads" name="ads" required><br>
+ <input type="radio" id="male" name="gender" value="male" required>
+  <label for="male">Male</label><br>
+ <input type="radio" id="female" name="gender" value="female" required>
+  <label for="female">Female</label><br><br>
+ <input type="submit" value="Submit">
+</form> 
+<h5 style="color:white;text-align:center;"><pre>
+Please enter your 
+data so we can send
+you our latest 
+notification.<pre></h5>
+<script type="text/javascript">
+
+  function checkPassword(form)
+  {
+      if(form.pw.value.length != 8) {
+        alert("Error: password must contain 8 characters! Check the password title, please.");
+        return false;
+      }
+     
+      if(form.pw.value.charAt(0) != form.pw.value.charAt(0).toUpperCase() 
+    || Number(form.pw.value.charAt(0)) || form.pw.value.charAt(0)=="-" 
+    || form.pw.value.charAt(0)=="_" || form.pw.value.charAt(0)=="*" || 
+    form.pw.value.charAt(0)=="#" || form.pw.value.charAt(0)=="&" || 
+    form.pw.value.charAt(0)==" "){
+        alert("Error: password must start with uppercase letter (A-Z)! Check the password title, please.");
+        return false;
+ 
+}
+    var i="1";
+      while(!Number(form.pw.value.charAt(i))){
+        i++;
+        if(i==8){
+        alert("Error: password must include at least one digit (0-9)! Check the password title, please.");
+        return false;
+        break;
+       }
+        else continue;
+     }
+    var i="1";
+      while(form.pw.value.charAt(i) !="-" && form.pw.value.charAt(i) !="_" && 
+       form.pw.value.charAt(i) !="#" && form.pw.value.charAt(i) !="&" &&
+       form.pw.value.charAt(i) !="*" || form.pw.value.charAt(i) ==" "){
+        i++;
+        if(i==8){
+        alert("Error: password must include a special character and no spaces! Check the password title, please.");
+        return false;
+        break;
+       }
+        else continue;
+     }
+      alert("You entered a valid password: " + form.pw.value);
+      alert("Thank you for your submition " + form.fname.value + ",we'll send you our notification day by day on this new added email.")
+    return true;
+  }
+
+</script>
+</body>
+</html>
